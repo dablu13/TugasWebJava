@@ -20,19 +20,20 @@ public class DetailController {
 
     @RequestMapping(value = "/{id}") // pake kurung kalo detail
     public String detailProduk(Model model, HttpSession session, @PathVariable("id") Integer id) {
-        Produk produk=null;
-        List<Produk> list=(List<Produk>) session.getAttribute("produk");
+        Produk produk = null;
+        List<Produk> list = (List<Produk>) session.getAttribute("produk");
         for (Produk produk1 : list) {
-            if (produk1.getId().compareTo(id)==0) {
-                produk=produk1;
+            if (produk1.getId().compareTo(id) == 0) {
+                produk = produk1;
             }
         }
         session.setAttribute("produkDetail", produk);
         return "detail";
     }
+
     @RequestMapping(value = "/tambahkan") // pake kurung kalo detail
     public String detailProduk(Model model, HttpSession session) {
-        List<Produk> list=(List<Produk>) session.getAttribute("keranjang");
+        List<Produk> list = (List<Produk>) session.getAttribute("keranjang");
         list.add((Produk) session.getAttribute("produkDetail"));
         session.removeAttribute("produkDetail");
         return "pindahkanKeWelcome";

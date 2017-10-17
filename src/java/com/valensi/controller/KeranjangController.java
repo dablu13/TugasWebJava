@@ -20,18 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/isiKeranjang") // ini url nya
 public class KeranjangController {
+
     @RequestMapping
-    public String isiKeranjang(){
+    public String isiKeranjang() {
         return "keranjang";
     }
+
     @RequestMapping(value = "/hapus/{id}")
-    public String isiKeranjang(HttpSession session, @PathVariable("id") Integer id){
-        List<Produk> list=(List<Produk>) session.getAttribute("keranjang");
-        List<Produk> keranjangBaru=new ArrayList<>();
-        int penampung=0;
+    public String isiKeranjang(HttpSession session, @PathVariable("id") Integer id) {
+        List<Produk> list = (List<Produk>) session.getAttribute("keranjang");
+        int penampung = 0;
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId()==id) {
-                penampung=i;
+            if (list.get(i).getId() == id) {
+                penampung = i;
             }
         }
         list.remove(penampung);
