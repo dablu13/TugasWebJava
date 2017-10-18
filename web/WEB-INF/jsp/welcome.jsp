@@ -10,16 +10,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <!-- Bootstrap -->
+        <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet"/>
         <title>${Title}</title>
     </head>
     <body>
-        <h3><a href="isiKeranjang">Keranjang</a> : ${keranjang.size()}</h3>
+        <div><h3><a href="isiKeranjang">Keranjang</a> : ${keranjang.size()}</h3></div>
         <c:forEach items="${produk}" var="c">
-        <div>
-            <div><a href="detail/${c.id}">${c.nama}</a></div>
-            <div>${c.harga}</div>
-        </div>
+            <div>
+                <div><a href="detail/${c.id}">${c.nama}</a></div>
+                <div>${c.harga}</div>
+            </div>
         </c:forEach>
     </body>
 </html>

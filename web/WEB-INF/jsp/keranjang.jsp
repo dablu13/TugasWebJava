@@ -10,15 +10,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Bootstrap -->
+        <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Isi Keranjang</h1>
+        <a href="welcome"><button value="submit">Kembali</button></a>
+        <h3>Isi Keranjang</h3>
         <c:forEach items="${keranjang}" var="c">
-            <div>
-                <div>${c.nama}</div>
-                <div><a href="isiKeranjang/hapus/${c.id}">Hapus</a></div>
-                
+            <div class="col-lg-10">
+                <div class="col-md-6">${c.nama}</div>
+                <div class="col-md-4"><a href="isiKeranjang/hapus/${c.id}">Hapus</a></div>
+
             </div>
         </c:forEach>
     </body>
