@@ -15,12 +15,16 @@
         <title>${Title}</title>
     </head>
     <body>
-        <div><h3><a href="isiKeranjang">Keranjang</a> : ${keranjang.size()}</h3></div>
-        <c:forEach items="${produk}" var="c">
+        <div class="container">
+            <div><h3><a href="isiKeranjang">Keranjang</a> : ${keranjang.size()}</h3></div>
             <div>
-                <div><a href="detail/${c.id}">${c.nama}</a></div>
-                <div>${c.harga}</div>
+                <c:forEach items="${produk}" var="c">
+                    <div class="text-centre">
+                        <div class="col-md-5"><a href="detail/${c.id}">${c.nama}</a></div>
+                        <div class="col-md-5">${c.harga}</div>
+                    </div>
+                </c:forEach>
             </div>
-        </c:forEach>
+        </div>
     </body>
 </html>

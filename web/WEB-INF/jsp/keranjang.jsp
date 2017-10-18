@@ -21,7 +21,6 @@
             <div class="col-lg-10">
                 <div class="col-md-6">${c.nama}</div>
                 <div class="col-md-4"><a href="isiKeranjang/hapus/${c.id}">Hapus</a></div>
-
             </div>
         </c:forEach>
     </body>
